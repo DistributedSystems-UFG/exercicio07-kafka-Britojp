@@ -21,6 +21,6 @@ producer.send(TOPIC2, value=msg3.encode())
 producer.flush()
 
 consumer = KafkaConsumer(bootstrap_servers=[BROKER_ADDR + ':' + BROKER_PORT])
-consumer.subscribe([TOPIC1])
+consumer.subscribe([TOPIC1, TOPIC2])
 for msg in consumer:
-    print (msg.value)
+    print (msg.value.decode())
