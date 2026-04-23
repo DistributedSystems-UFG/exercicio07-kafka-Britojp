@@ -5,7 +5,7 @@ from kafka import KafkaConsumer
 
 
 
-consumer = KafkaConsumer(bootstrap_servers=[BROKER_ADDR + ':' + BROKER_PORT], auto_offset_reset='earliest')
+consumer = KafkaConsumer(bootstrap_servers=[BROKER_ADDR + ':' + BROKER_PORT])
 producer = KafkaProducer(bootstrap_servers=[BROKER_ADDR + ':' + BROKER_PORT])
 consumer.subscribe([TOPIC1])
 for msg in consumer:
